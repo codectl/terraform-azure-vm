@@ -1,0 +1,32 @@
+variable "availability_sets" {
+  description = "Contains all availabiliy sets configuration"
+  type = map(object({
+    name                         = optional(string)
+    location                     = optional(string)
+    resource_group_name          = optional(string)
+    managed                      = optional(bool, true)
+    platform_fault_domain_count  = optional(number, 3)
+    platform_update_domain_count = optional(number, 5)
+    proximity_placement_group_id = optional(string, null)
+    tags                         = optional(map(string))
+  }))
+  default = null
+}
+
+variable "location" {
+  description = "default azure region to be used."
+  type        = string
+  default     = null
+}
+
+variable "resource_group_name" {
+  description = "default resource group to be used."
+  type        = string
+  default     = null
+}
+
+variable "tags" {
+  description = "tags to be added to the resources"
+  type        = map(string)
+  default     = {}
+}
