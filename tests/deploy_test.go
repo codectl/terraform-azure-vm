@@ -3,7 +3,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/cloudnationhq/az-cn-go-validor"
+	"github.com/codectl/validor"
 )
 
 func TestApplyNoError(t *testing.T) {

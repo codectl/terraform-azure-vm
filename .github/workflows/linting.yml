@@ -1,12 +1,11 @@
-name: "linting"
+name: linting
 
 on:
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
+
+permissions:
+  contents: read
 
 jobs:
-  checks:
-    uses: cloudnationhq/terraform-azure-workflows/.github/workflows/linting.yml@main
+  linting:
+    uses: codectl/flume/.github/workflows/linting.yml@main
